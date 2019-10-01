@@ -19,6 +19,19 @@
 
 
     <body>
+		<div id="area">
+			<div id="small_menu">
+				<ul>
+				<li><a href="./version.html">更新历史</a></li>
+				<!-- <li><a href="#">item two</a></li>       
+				<li><a href="#">item three</a></li>
+				<li><a href="#">item four</a></li>
+				<li><a href="#">item five</a></li> -->
+				</ul>     
+			</div>  
+			<div id="on" onclick="xuanfu();"><p>+</p></div> 
+		</div>
+
 		<div id="error">哥儿，浏览器版本太低啦！显示不出来啊……</div>
         <div id="main">
             <div id="wrap">
@@ -71,13 +84,57 @@
 			<p>请粘贴歌曲在网易云音乐的分享链接:<input id="input1"/><input type="button" id="bt2" value="确定" onclick="BGMChanging()"></p>
 		</div> -->
 		<br/>
-		<div id = "version">
+		<!-- <div id = "version">
 			<input type="button" value ="更新历史 " onclick="window.location.href='./version.html'"/>
-		</div>
+		</div> -->
 		
 		<audio id="bgm" class="media-audio"  preload loop="loop"></audio>
 		<script language="javascript" type="text/javascript">
-		
+			var menubox = document.getElementById("area"); //area为菜单栏的id
+			var cli_on = document.getElementById("on"); //on为按钮
+			var flag = false, timer = null, initime = null, r_len = 0;
+
+			if(menubox.style.right=== 0){
+				flag = true;
+			}
+			else{
+				flag = false;
+			}
+			cli_on.onclick = function () {
+				//为on按钮绑定click事件
+				clearTimeout(initime);
+				//根据状态flag执开展开收缩
+				if (flag) {
+					r_len = 0;
+					timer = setInterval(slideright, 10);
+					} else {
+					r_len = -160;
+					timer = setInterval(slideleft, 10);
+					}
+			}
+			//展开
+			function slideright() {
+				if (r_len <= -160) {
+				clearInterval(timer);
+				flag = !flag;
+				return false;
+				}else{
+				r_len -= 5;
+				menubox.style.right = r_len + 'px';
+				}
+			}
+			//收缩
+			function slideleft() {
+				if (r_len >= 0) {
+				clearInterval(timer);
+				flag = !flag;
+				return false;
+				} else {
+				r_len += 5;
+				menubox.style.right = r_len + 'px';
+				}
+			} 
+
 			function Appear(){
 				$("#BGMChanger").show();
 				document.getElementById("BGMButton").style="display:none";
