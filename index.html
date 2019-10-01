@@ -89,6 +89,23 @@
 		</div> -->
 		
 		<audio id="bgm" class="media-audio"  preload loop="loop"></audio>
+
+		<!-- 百度的推送功能 -->
+		<script>
+			(function(){
+				var bp = document.createElement('script');
+				var curProtocol = window.location.protocol.split(':')[0];
+				if (curProtocol === 'https'){
+			   bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+			  }
+			  else{
+			  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+			  }
+				var s = document.getElementsByTagName("script")[0];
+				s.parentNode.insertBefore(bp, s);
+			})();
+		</script>
+
 		<script language="javascript" type="text/javascript">
 			var menubox = document.getElementById("area"); //area为菜单栏的id
 			var cli_on = document.getElementById("on"); //on为按钮
