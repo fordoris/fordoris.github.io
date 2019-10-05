@@ -146,9 +146,8 @@ body {
 }
 
 #ememe {
-    width: 1080px;
+    width: 100%;
     top: 550px;
-    font-size: 16px;
     display: none;
     margin: 0 auto;
 }

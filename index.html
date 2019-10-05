@@ -102,6 +102,10 @@
 					.catch(function (err) {
 						console.error(err);
 					})
+					if($("#ememe").outerWidth() > 1080){
+						$("#ememe").width(1080);
+					}
+					console.log($("#ememe").outerWidth());
 		</script>
 	</div>
 	<div id="BGMButton">
