@@ -16,21 +16,17 @@
 	<script type="text/javascript" src="./Our Story of &amp; love_files/functions.js" charset="utf-8"></script>
 	<script type="text/javascript" src="./Our Story of &amp; love_files/love.min.js" charset="utf-8"></script>
 	<link rel="icon" type="image/x-icon" href="icon.ico" />
-
+	<link rel="stylesheet" href="./node_modules/skplayer/dist/skPlayer.min.js">
 	<style type="text/css">
 		.STYLE1 {
 			color: #666666
 		}
 	</style>
-
 </head>
 
 
 <body>
-	<div id="sentence">
-	</div>
-	<!-- <div id="lwlhitokoto"><script>lwlhitokoto()</script></divdiv> -->
-	<div id="area">
+<div id="area">
 		<div id="small_menu">
 			<ul>
 				<li><a href="./version.html">更新历史</a></li>
@@ -44,6 +40,61 @@
 			<p>+</p>
 		</div>
 	</div>
+	<div class="row" style="display: none;">
+		<div class="col s12 l3">
+			<div class="table cover">
+				<div id="particles-after-filter"><canvas class="particles-js-canvas-el" width="480" height="888"
+						style="width: 100%; height: 100%;"></canvas></div>
+				<div id="particles"><canvas class="particles-js-canvas-el" width="480" height="888"
+						style="width: 100%; height: 100%;"></canvas></div>
+			</div>
+		</div>
+
+	</div>
+	<div id="musicContainer">
+		<a id="musicSwitch" href="javascript:void(0)"></a>
+		<div id="skPlayer"></div>
+		<script src="E:\Files\ForDoris\node_modules\skplayer\dist\skPlayer.min.js"></script>
+		<script language="javascript" type="text/javascript">
+			var player = new skPlayer({
+				autoplay: true,
+				//可选项,自动播放,默认为false,true/false
+				listshow: true,
+				//可选项,列表显示,默认为true,true/false
+				mode: 'listloop',
+				//可选项,循环模式,默认为'listloop'
+				//'listloop',列表循环
+				//'singleloop',单曲循环
+				music: {
+					//必需项,音乐配置
+					type: 'cloud',
+					//必需项,网易云方式指定填'cloud'
+					source: 2865353405,
+					//必需项,网易云音乐歌单id
+					//登录网易云网页版,在网页地址中拿到
+					// ... playlist?id=31792167
+				},
+			});
+		</script>
+	</div>
+	<script language="javascript" type="text/javascript">
+		$(function () {
+			$('#musicSwitch').on('click', function () {
+				$(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
+				if (!$('#skPlayer').find('audio').length) {
+					var player = new skPlayer({
+						autoplay: true,
+						music: {
+							type: 'cloud',
+							source: 2865353405
+						}
+					});
+				}
+			});
+		});
+	</script>
+
+	<script type="text/javascript" src="./Our Story of & love_files/particles.min.js"></script>
 
 	<div id="error">哥儿，浏览器版本太低啦！显示不出来啊……</div>
 	<div id="main">
@@ -125,7 +176,7 @@
 			<input type="button" value ="更新历史 " onclick="window.location.href='./version.html'"/>
 		</div> -->
 
-	<audio id="bgm" class="media-audio" preload loop="loop"></audio>
+	<!-- <audio id="bgm" class="media-audio" preload loop="loop"></audio> -->
 
 	<!-- 百度的推送功能 -->
 	<script>
@@ -189,7 +240,6 @@
 				menubox.style.right = r_len + 'px';
 			}
 		}
-
 		// function Appear() {
 		// 	$("#BGMChanger").show();
 		// 	document.getElementById("BGMButton").style = "display:none";
@@ -231,7 +281,7 @@
 		// } else {
 		// 	document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=17177324.mp3"
 		// }
-		document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=17177324.mp3"
+		//document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=17177324.mp3"
 	</script>
 
 	<script>
@@ -298,10 +348,10 @@
 					if (seed.hover(x, y)) {
 						var audio = document.getElementById("bgm"),
 							play = function () {
-								audio.play();
+								player.play();
 								document.removeEventListener("touchstart", play, false);
 							};
-						audio.play();
+						player.play();
 						hold = 0;
 						canvas.unbind("click");
 						canvas.unbind("mousemove");
