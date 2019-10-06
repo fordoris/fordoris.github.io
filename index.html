@@ -104,9 +104,12 @@
 					.catch(function (err) {
 						console.error(err);
 					})
-					if($("#ememe").outerWidth() > 1080){
-						$("#ememe").width(1080);
+					if($("#ememe").outerWidth() > 864){
+						$("#ememe").width(864);
+						$("#ememe").css("left",108);
 					}
+					$("#hitokoto_sentence").width($("#ememe").outerWidth()*0.9);
+					$("#hitokoto_sentence").css("left",$("#ememe").outerWidth()*0.05);
 					console.log($("#ememe").outerWidth());
 		</script>
 	</div>
