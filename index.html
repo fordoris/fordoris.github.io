@@ -27,7 +27,7 @@
 
 
 <body>
-	<div id = "sentence">	
+	<div id="sentence">
 	</div>
 	<!-- <div id="lwlhitokoto"><script>lwlhitokoto()</script></divdiv> -->
 	<div id="area">
@@ -84,33 +84,33 @@
 		</div>
 		<!--屏幕下方的字-->
 		<div id="ememe">
-			<div id = "sentence">
-				<p id="hitokoto_quote_left">『</p>	
+			<div id="sentence">
+				<p id="hitokoto_quote_left">『</p>
 				<p id="hitokoto_sentence">一言</p>
 				<p id="hitokoto_quote_right">』</p>
 				<p id="hitokoto_author">(如果没有正常加载，请刷新页面重试)</p>
 			</div>
 		</div>
 		<script>
-				fetch('https://v1.hitokoto.cn/?c=d')
-					.then(function (res) {
-						return res.json();
-					})
-					.then(function (data) {
-						var hitokoto = document.getElementById('hitokoto');
-						hitokoto_sentence.innerText = data.hitokoto;
-						hitokoto_author.innerText = "--" + '「' + data.from + '」';
-					})
-					.catch(function (err) {
-						console.error(err);
-					})
-					if($("#ememe").outerWidth() > 864){
-						$("#ememe").width(864);
-						$("#ememe").css("left",108);
-					}
-					$("#hitokoto_sentence").width($("#ememe").outerWidth()*0.8);
-					$("#hitokoto_sentence").css("left",$("#ememe").outerWidth()*0.1);
-					console.log($("#ememe").outerWidth());
+			fetch('https://v1.hitokoto.cn/?c=d')
+				.then(function (res) {
+					return res.json();
+				})
+				.then(function (data) {
+					var hitokoto = document.getElementById('hitokoto');
+					hitokoto_sentence.innerText = data.hitokoto;
+					hitokoto_author.innerText = "--" + '「' + data.from + '」';
+				})
+				.catch(function (err) {
+					console.error(err);
+				})
+			if ($("#ememe").outerWidth() > 864) {
+				$("#ememe").width(864);
+				$("#ememe").css("left", 108);
+			}
+			$("#hitokoto_sentence").width($("#ememe").outerWidth() * 0.8);
+			$("#hitokoto_sentence").css("left", $("#ememe").outerWidth() * 0.1);
+			console.log($("#ememe").outerWidth());
 		</script>
 	</div>
 	<div id="BGMButton">
@@ -190,47 +190,48 @@
 			}
 		}
 
-		function Appear() {
-			$("#BGMChanger").show();
-			document.getElementById("BGMButton").style = "display:none";
-		}
+		// function Appear() {
+		// 	$("#BGMChanger").show();
+		// 	document.getElementById("BGMButton").style = "display:none";
+		// }
 
-		function BGMChanging() {
-			//分享Ariana Grande/2 Chainz的单曲《7 rings (Remix)》http://music.163.com/song/1343492095/?userid=476020692 (@网易云音乐)
-			var str = document.getElementById("input1").value;
-			var a = str.search("《");
-			var b = str.search("song/");
-			var c = str.search("/?userid");
-			var d = str.search("》");
-			var singer_name = str.slice(2, a - 4);
-			var song_name = str.slice(a, d + 1);
-			var song_id = str.slice(b + 5, c - 2);
-			console.log(song_id + "\n" + song_name + "\n" + singer_name);
-			if (singer_name == null || song_name == null || song_id == null) {
-				alert("无法识别链接，请重新去网易云音乐中复制");
-			} else {
-				var flag = window.confirm("请确认要替换的BGM是" + singer_name + "的" + song_name);
-				if (flag) {
-					if (typeof (localStorage) == "undefind") {
-						alert("您的浏览器不支持本地储存，无法更改BGM");
-						location.reload();
-					} else {
-						localStorage.musicId = song_id;
-						location.reload();
-					}
-				} else {
-					location.reload();
-				}
-			}
+		// function BGMChanging() {
+		// 	//分享Ariana Grande/2 Chainz的单曲《7 rings (Remix)》http://music.163.com/song/1343492095/?userid=476020692 (@网易云音乐)
+		// 	var str = document.getElementById("input1").value;
+		// 	var a = str.search("《");
+		// 	var b = str.search("song/");
+		// 	var c = str.search("/?userid");
+		// 	var d = str.search("》");
+		// 	var singer_name = str.slice(2, a - 4);
+		// 	var song_name = str.slice(a, d + 1);
+		// 	var song_id = str.slice(b + 5, c - 2);
+		// 	console.log(song_id + "\n" + song_name + "\n" + singer_name);
+		// 	if (singer_name == null || song_name == null || song_id == null) {
+		// 		alert("无法识别链接，请重新去网易云音乐中复制");
+		// 	} else {
+		// 		var flag = window.confirm("请确认要替换的BGM是" + singer_name + "的" + song_name);
+		// 		if (flag) {
+		// 			if (typeof (localStorage) == "undefind") {
+		// 				alert("您的浏览器不支持本地储存，无法更改BGM");
+		// 				location.reload();
+		// 			} else {
+		// 				localStorage.musicId = song_id;
+		// 				location.reload();
+		// 			}
+		// 		} else {
+		// 			location.reload();
+		// 		}
+		// 	}
 
-		}
-		console.log(localStorage.musicId);
+		// }
+		// //console.log(localStorage.musicId);
 		// if (localStorage.musicId) {
 		// 	document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=" + localStorage.musicId +
 		// 		".mp3"
 		// } else {
 		// 	document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=17177324.mp3"
 		// }
+		document.getElementById("bgm").src = "http://music.163.com/song/media/outer/url?id=17177324.mp3"
 	</script>
 
 	<script>
