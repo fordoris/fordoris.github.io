@@ -41,7 +41,7 @@
     "sass-loader": "^6.0.6",
     "style-loader": "^0.18.2",
     "webpack": "^3.0.0",
-    "webpack-dev-server": "^2.5.0"
+    "webpack-dev-server": "^3.8.2"
   },
   "homepage": "https://github.com/wangpengfei15975/skPlayer#readme",
   "keywords": [
