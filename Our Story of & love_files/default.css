@@ -190,6 +190,15 @@ body {
     text-align: right;
 }
 
+#hitokoto_quote_left{
+    font-size: 20px;
+}
+
+#hitokoto_quote_right{
+    font-size: 20px;
+    text-align: right;
+}
+
 .hand {
     cursor: pointer;
 }
