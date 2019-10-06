@@ -183,6 +183,8 @@ body {
     text-align: center;
     line-height: 30px;
     word-break: normal;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #hitokoto_author{
