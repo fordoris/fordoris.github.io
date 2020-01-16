@@ -3,6 +3,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml">
 
 <head>
+
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<title>For Doris</title>
 	<link type="text/css" rel="stylesheet" href="./Our Story of &amp; love_files/default.css">
@@ -26,7 +27,29 @@
 
 
 <body>
-<div id="area">
+	<!-- Matomo -->
+	<script type="text/javascript">
+		var _paq = window._paq || [];
+		/* tracker methods like "setCustomDimension" should be called before "trackPageView" */
+		_paq.push(['trackPageView']);
+		_paq.push(['enableLinkTracking']);
+		(function () {
+			var u = "https://fordorisxyz.matomo.cloud/";
+			_paq.push(['setTrackerUrl', u + 'matomo.php']);
+			_paq.push(['setSiteId', '1']);
+			var d = document,
+				g = d.createElement('script'),
+				s = d.getElementsByTagName('script')[0];
+			g.type = 'text/javascript';
+			g.async = true;
+			g.defer = true;
+			g.src = '//cdn.matomo.cloud/fordorisxyz.matomo.cloud/matomo.js';
+			s.parentNode.insertBefore(g, s);
+		})();
+	</script>
+	<!-- End Matomo Code -->
+
+	<div id="area">
 		<div id="small_menu">
 			<ul>
 				<li><a href="./version.html">更新历史</a></li>
@@ -118,7 +141,7 @@
 						<span class="say"> 我的好多好多缺点你也都看到了。</span><br>
 						<span class="say"> </span><br>
 						<span class="say"> 生日快乐🎂！</span><br>
-								<span class="say"> </span><br>
+						<span class="say"> </span><br>
 						<span class="say"> We Are Best Friends</span><br>
 						<span class="say"> </span><br>
 						<span class="say"> ..Forever..</span><br>
@@ -422,7 +445,7 @@
 
 				var textAnimate = eval(Jscex.compile("async", function () {
 					var together = new Date();
-					together.setFullYear(2017, (9-1),27); 			//时间年月日
+					together.setFullYear(2017, (9 - 1), 27); //时间年月日
 					//together.setFullYear(2019, (11-1), 23); //时间年月日
 					together.setHours(0); //小时	
 					together.setMinutes(0); //分钟
@@ -451,26 +474,6 @@
 				runAsync().start();
 			}
 		})();
-	</script>
-	<!-- The core Firebase JS SDK is always required and must be listed first -->
-	<script src="https://www.gstatic.com/firebasejs/7.1.0/firebase-app.js"></script>
-
-	<!-- TODO: Add SDKs for Firebase products that you want to use
-			https://firebase.google.com/docs/web/setup#available-libraries -->
-
-	<script>
-		// Your web app's Firebase configuration
-		var firebaseConfig = {
-			apiKey: "AIzaSyDUhhARbkn5PY8z9cO5DSZN6y0lR0RgPG4",
-			authDomain: "airy-gamma-249308.firebaseapp.com",
-			databaseURL: "https://airy-gamma-249308.firebaseio.com",
-			projectId: "airy-gamma-249308",
-			storageBucket: "",
-			messagingSenderId: "74304819399",
-			appId: "1:74304819399:web:d07744b281894e3ebb6ee2"
-		};
-		// Initialize Firebase
-		firebase.initializeApp(firebaseConfig);
 	</script>
 </body>
 
