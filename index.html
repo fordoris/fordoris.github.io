@@ -27,34 +27,13 @@
 
 
 <body>
-    <!-- Matomo -->
-    <script type="text/javascript">
-        var _paq = window._paq || [];
-        /* tracker methods like "setCustomDimension" should be called before "trackPageView" */
-        _paq.push(['trackPageView']);
-        _paq.push(['enableLinkTracking']);
-        (function() {
-            var u = "https://fordorisxyz.matomo.cloud/";
-            _paq.push(['setTrackerUrl', u + 'matomo.php']);
-            _paq.push(['setSiteId', '1']);
-            var d = document,
-                g = d.createElement('script'),
-                s = d.getElementsByTagName('script')[0];
-            g.type = 'text/javascript';
-            g.async = true;
-            g.defer = true;
-            g.src = '//cdn.matomo.cloud/fordorisxyz.matomo.cloud/matomo.js';
-            s.parentNode.insertBefore(g, s);
-        })();
-    </script>
-    <!-- End Matomo Code -->
 
     <div id="area">
         <div id="small_menu">
             <ul>
                 <li><a href="./version.html">更新历史</a></li>
-                <!-- <li><a href="#">item two</a></li>       
-				<li><a href="#">item three</a></li>
+                <li><a href="./letters.html">纸短情长</a></li>       
+				<!-- <li><a href="#">item three</a></li>
 				<li><a href="#">item four</a></li>
 				<li><a href="#">item five</a></li> -->
             </ul>
@@ -66,8 +45,10 @@
     <div class="row" style="display: none;">
         <div class="col s12 l3">
             <div class="table cover">
-                <div id="particles-after-filter"><canvas class="particles-js-canvas-el" width="480" height="888" style="width: 100%; height: 100%;"></canvas></div>
-                <div id="particles"><canvas class="particles-js-canvas-el" width="480" height="888" style="width: 100%; height: 100%;"></canvas></div>
+                <div id="particles-after-filter"><canvas class="particles-js-canvas-el" width="480" height="888"
+                        style="width: 100%; height: 100%;"></canvas></div>
+                <div id="particles"><canvas class="particles-js-canvas-el" width="480" height="888"
+                        style="width: 100%; height: 100%;"></canvas></div>
             </div>
         </div>
 
@@ -93,25 +74,25 @@
                     type: 'file',
                     //必需项,自配置文件方式指定填'file'
                     source: [
-                                //必需项,音乐文件数组
-                                {
-                                    name: '水星记',
-                                    //必需项,歌名
-                                    author: '郭顶',
-                                    //必需项,歌手
-                                    src: 'http://music.163.com/song/media/outer/url?id=441491828.mp3',
-                                    //必需项,音乐文件
-                                    cover: 'http://p2.music.126.net/wSMfGvFzOAYRU_yVIfquAA==/2946691248081599.jpg'
-                                        //必需项,封面图片
-                                }, 
+                        //必需项,音乐文件数组
+                        {
+                            name: '水星记',
+                            //必需项,歌名
+                            author: '郭顶',
+                            //必需项,歌手
+                            src: 'http://music.163.com/song/media/outer/url?id=441491828.mp3',
+                            //必需项,音乐文件
+                            cover: 'http://p2.music.126.net/wSMfGvFzOAYRU_yVIfquAA==/2946691248081599.jpg'
+                            //必需项,封面图片
+                        },
                     ]
                 }
             });
         </script>
     </div>
     <script language="javascript" type="text/javascript">
-        $(function() {
-            $('#musicSwitch').on('click', function() {
+        $(function () {
+            $('#musicSwitch').on('click', function () {
                 $(this).hasClass('active') ? $(this).removeClass('active') : $(this).addClass('active');
                 if (!$('#skPlayer').find('audio').length) {
                     player = new skPlayer({
@@ -138,8 +119,8 @@
                                     src: 'http://music.163.com/song/media/outer/url?id=441491828.mp3',
                                     //必需项,音乐文件
                                     cover: 'http://p2.music.126.net/wSMfGvFzOAYRU_yVIfquAA==/2946691248081599.jpg'
-                                        //必需项,封面图片
-                                }, 
+                                    //必需项,封面图片
+                                },
                             ]
                         }
                     });
@@ -187,38 +168,11 @@
         </div>
         <!--屏幕下方的字-->
         <div id="ememe">
-            <div id="sentence">
-                <p id="hitokoto_quote_left">『</p>
-                <p id="hitokoto_sentence">一言</p>
-                <p id="hitokoto_quote_right">』</p>
-                <p id="hitokoto_author">(如果没有正常加载，请刷新页面重试)</p>
-            </div>
+            <p>「 佛说,"修百世才能同舟，修千世才能共枕",那一只只与我握过的手,那一朵朵与我交换过的粲然微笑,那一句句平淡的对话,我又如何能够像风吹拂过衣袖似的,把这些人淡淡地吹散,漠然的忘记？</p>
+            <p>每一粒沙地里的石子,我尚且珍爱它,每一次日出与日落,我都舍不得忘怀,又何况,这一张张活生生的脸孔,我又如何能在回忆里抹去它们。</p>
+            <p> 其实,这样解释都是多余的了。」</p>
+            <p style="text-align:right;">--三毛《撒哈拉的故事》</p>
         </div>
-        <script>
-            fetch('https://v1.hitokoto.cn/?c=d')
-                .then(function(res) {
-                    return res.json();
-                })
-                .then(function(data) {
-                    var hitokoto = document.getElementById('hitokoto');
-                    hitokoto_sentence.innerText = data.hitokoto;
-                    hitokoto_author.innerText = "--" + '「' + data.from + '」';
-                })
-                .catch(function(err) {
-                    console.error(err);
-                })
-            if ($("#ememe").outerWidth() > 864) {
-                $("#ememe").width(864);
-                $("#ememe").css("left", 108);
-            }
-            $("#hitokoto_sentence").width($("#ememe").outerWidth() * 0.8);
-            $("#hitokoto_sentence").css("left", $("#ememe").outerWidth() * 0.1);
-            console.log($("#ememe").outerWidth());
-        </script>
-    </div>
-    <div id="BGMButton">
-        <input type="button" id="bt1" value="更换BGM" onclick="Appear()">
-    </div>
 
     <!-- <div id = "BGMChanger">
 			<p>请粘贴歌曲在网易云音乐的分享链接:<input id="input1"/><input type="button" id="bt2" value="确定" onclick="BGMChanging()"></p>
@@ -243,19 +197,19 @@
         } else {
             flag = false;
         }
-        cli_on.onclick = function() {
-                //为on按钮绑定click事件
-                clearTimeout(initime);
-                //根据状态flag执开展开收缩
-                if (flag) {
-                    r_len = 0;
-                    timer = setInterval(slideright, 10);
-                } else {
-                    r_len = -160;
-                    timer = setInterval(slideleft, 10);
-                }
+        cli_on.onclick = function () {
+            //为on按钮绑定click事件
+            clearTimeout(initime);
+            //根据状态flag执开展开收缩
+            if (flag) {
+                r_len = 0;
+                timer = setInterval(slideright, 10);
+            } else {
+                r_len = -160;
+                timer = setInterval(slideleft, 10);
             }
-            //展开
+        }
+        //展开
         function slideright() {
             if (r_len <= -160) {
                 clearInterval(timer);
@@ -322,7 +276,7 @@
     </script>
 
     <script>
-        (function() {
+        (function () {
             var canvas = $('#canvas');
 
             if (!canvas[0].getContext) {
@@ -377,14 +331,14 @@
                 var foot = tree.footer;
                 var hold = 1;
 
-                canvas.click(function(e) {
+                canvas.click(function (e) {
                     var offset = canvas.offset(),
                         x, y;
                     x = e.pageX - offset.left;
                     y = e.pageY - offset.top;
                     if (seed.hover(x, y)) {
                         var audio = document.getElementById("bgm"),
-                            play = function() {
+                            play = function () {
                                 player.play();
                                 document.removeEventListener("touchstart", play, false);
                             };
@@ -394,7 +348,7 @@
                         canvas.unbind("mousemove");
                         canvas.removeClass('hand');
                     }
-                }).mousemove(function(e) {
+                }).mousemove(function (e) {
                     var offset = canvas.offset(),
                         x, y;
                     x = e.pageX - offset.left;
@@ -402,7 +356,7 @@
                     canvas.toggleClass('hand', seed.hover(x, y));
                 });
 
-                var seedAnimate = eval(Jscex.compile("async", function() {
+                var seedAnimate = eval(Jscex.compile("async", function () {
                     seed.draw();
                     while (hold) {
                         $await(Jscex.Async.sleep(10));
@@ -418,21 +372,21 @@
                     }
                 }));
 
-                var growAnimate = eval(Jscex.compile("async", function() {
+                var growAnimate = eval(Jscex.compile("async", function () {
                     do {
                         tree.grow();
                         $await(Jscex.Async.sleep(10));
                     } while (tree.canGrow());
                 }));
 
-                var flowAnimate = eval(Jscex.compile("async", function() {
+                var flowAnimate = eval(Jscex.compile("async", function () {
                     do {
                         tree.flower(2);
                         $await(Jscex.Async.sleep(10));
                     } while (tree.canFlower());
                 }));
 
-                var moveAnimate = eval(Jscex.compile("async", function() {
+                var moveAnimate = eval(Jscex.compile("async", function () {
                     tree.snapshot("p1", 240, 0, 610, 680);
                     while (tree.move("p1", 500, 0)) {
                         foot.draw();
@@ -447,7 +401,7 @@
                     canvas.css("background", "none");
                 }));
 
-                var jumpAnimate = eval(Jscex.compile("async", function() {
+                var jumpAnimate = eval(Jscex.compile("async", function () {
                     var ctx = tree.ctx;
                     while (true) {
                         tree.ctx.clearRect(0, 0, width, height);
@@ -457,7 +411,7 @@
                     }
                 }));
 
-                var textAnimate = eval(Jscex.compile("async", function() {
+                var textAnimate = eval(Jscex.compile("async", function () {
                     var together = new Date();
                     together.setFullYear(2017, (9 - 1), 27); //时间年月日
                     //together.setFullYear(2019, (11-1), 23); //时间年月日
@@ -472,7 +426,7 @@
                     }
                 }));
 
-                var runAsync = eval(Jscex.compile("async", function() {
+                var runAsync = eval(Jscex.compile("async", function () {
                     $await(seedAnimate());
                     $("#ememe").show().typewriter();
                     $await(growAnimate());

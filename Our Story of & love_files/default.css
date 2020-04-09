@@ -146,9 +146,10 @@ body {
 }
 
 #ememe {
-    width: 80%;
-    left: 10%;
+    font-family: 'ttc2';
+    width: 1080px;
     top: 550px;
+    font-size: 16px;
     display: none;
     margin: 0 auto;
 }
@@ -178,7 +179,7 @@ body {
     font-family: '微软雅黑';
 }
 
-#hitokoto_sentence{
+#hitokoto_sentence {
     font-size: 20px;
     text-align: center;
     line-height: 30px;
@@ -187,17 +188,17 @@ body {
     margin-right: auto;
 }
 
-#hitokoto_author{
+#hitokoto_author {
     font-size: 16px;
     color: #666666;
     text-align: right;
 }
 
-#hitokoto_quote_left{
+#hitokoto_quote_left {
     font-size: 20px;
 }
 
-#hitokoto_quote_right{
+#hitokoto_quote_right {
     font-size: 20px;
     text-align: right;
 }
